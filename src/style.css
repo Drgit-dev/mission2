@@ -1,0 +1,119 @@
+:root {
+  --bg: #0f111a;
+  --surface: #1a1d29;
+  --text: #e2e8f0;
+  --gold: #d4af37;
+  --gryffindor: #ae0001;
+  --slytherin: #2a623d;
+  --hufflepuff: #ecb939;
+  --ravenclaw: #222f5b;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 1rem;
+}
+
+h1 {
+  color: var(--gold);
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--gold);
+  background: var(--surface);
+  color: white;
+  cursor: pointer;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  background-color: #2a2a2a;
+}
+
+.card-content { padding: 1rem; }
+.card h2 { margin: 0 0 0.5rem 0; font-size: 1.2rem; }
+
+.house {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.house.gryffindor { background: var(--gryffindor); }
+.house.slytherin { background: var(--slytherin); }
+.house.hufflepuff { background: var(--hufflepuff); color: #000; }
+.house.ravenclaw { background: var(--ravenclaw); }
+.house.sin-casa { background: #555; }
+
+.actor, .status { font-size: 0.85rem; color: #94a3b8; margin: 0.2rem 0; }
+
+/* Estados */
+.loading, .error, .empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(212, 175, 55, 0.3);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error { color: #ef4444; }
+.error-detail { font-size: 0.9rem; margin-bottom: 1rem; }
+.error button {
+  background: var(--gold);
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}

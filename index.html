@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Archivo de Hogwarts</title>
+</head>
+<body>
+  <header>
+    <h1>El Archivo de Hogwarts</h1>
+    <div class="filter-container">
+      <label for="house-filter">Filtrar por Casa:</label>
+      <select id="house-filter">
+        <option value="all">Todas las casas</option>
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Slytherin">Slytherin</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+        <option value="Ravenclaw">Ravenclaw</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <!-- ESTA LÍNEA ES CLAVE: Conecta Vite con tu JS -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
